@@ -1,6 +1,6 @@
 # wsl-ubuntu
 # init
-```
+```shell
 curl https://raw.githubusercontent.com/chubbyhippo/wsl-ubuntu/refs/heads/main/init.sh | /usr/bin/env sh
 ```
 # wsl
