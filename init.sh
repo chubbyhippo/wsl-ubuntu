@@ -8,7 +8,7 @@ curl https://raw.githubusercontent.com/chubbyhippo/wsl-ubuntu/refs/heads/main/ap
 # docker 
 curl https://raw.githubusercontent.com/chubbyhippo/wsl-ubuntu/refs/heads/main/install-docker.sh | /usr/bin/env sh
 # fzf
-curl https://raw.githubusercontent.com/chubbyhippo/wsl-ubuntu/refs/heads/main/install-fzf.sh | /usr/bin/env sh
+curl https://raw.githubusercontent.com/chubbyhippo/fzf/refs/heads/main/install.sh | /usr/bin/env sh
 # mise
 curl https://raw.githubusercontent.com/chubbyhippo/mise/refs/heads/main/install-bash.sh | /usr/bin/env bash
 # starship
