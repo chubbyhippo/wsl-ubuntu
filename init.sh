@@ -12,4 +12,4 @@ curl https://raw.githubusercontent.com/chubbyhippo/wsl-ubuntu/refs/heads/main/in
 # mise
 curl https://raw.githubusercontent.com/chubbyhippo/mise/refs/heads/main/install-bash.sh | /usr/bin/env bash
 # starship
-curl -s https://raw.githubusercontent.com/chubbyhippo/starship/main/install-bash.sh | /usr/bin/env bash
+curl https://raw.githubusercontent.com/chubbyhippo/starship/main/install-bash.sh | /usr/bin/env bash
