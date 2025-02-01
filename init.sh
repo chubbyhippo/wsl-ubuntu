@@ -5,6 +5,8 @@ sudo DEBIAN_FRONTEND="noninteractive" apt upgrade -y
 
 # apt
 curl https://raw.githubusercontent.com/chubbyhippo/wsl-ubuntu/refs/heads/main/apt.sh | /usr/bin/env sh
+# snap
+curl https://raw.githubusercontent.com/chubbyhippo/wsl-ubuntu/refs/heads/main/snap.sh | /usr/bin/env sh
 # docker 
 curl https://raw.githubusercontent.com/chubbyhippo/docker/refs/heads/main/install.sh | /usr/bin/env sh
 # fzf
