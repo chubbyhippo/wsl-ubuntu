@@ -6,7 +6,7 @@ sudo DEBIAN_FRONTEND="noninteractive" apt upgrade -y
 # apt
 curl https://raw.githubusercontent.com/chubbyhippo/wsl-ubuntu/refs/heads/main/apt.sh | /usr/bin/env sh
 # docker 
-curl https://raw.githubusercontent.com/chubbyhippo/wsl-ubuntu/refs/heads/main/install-docker.sh | /usr/bin/env sh
+curl https://raw.githubusercontent.com/chubbyhippo/docker/refs/heads/main/install.sh | /usr/bin/env sh
 # fzf
 curl https://raw.githubusercontent.com/chubbyhippo/fzf/refs/heads/main/install.sh | /usr/bin/env sh
 # mise
