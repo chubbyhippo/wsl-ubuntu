@@ -17,6 +17,6 @@ sudo apt-get update
 echo "The content of $DOCKER_CONFIG_FILE is:"
 cat "$DOCKER_CONFIG_FILE"
 
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 sudo groupadd docker
 sudo usermod -aG docker $USER
