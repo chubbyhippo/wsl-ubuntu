@@ -6,3 +6,4 @@ sudo apt install cmake -y
 sudo apt install ripgrep -y
 sudo apt install rlwrap -y
 sudo apt install leiningen -y
+sudo apt install fd-find -y
