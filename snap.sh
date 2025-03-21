@@ -2,4 +2,3 @@
 
 sudo snap install emacs --classic
 sudo snap install nvim --classic
-sudo snap install racket
