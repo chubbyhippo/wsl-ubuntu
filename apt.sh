@@ -8,3 +8,4 @@ sudo apt install rlwrap -y
 sudo apt install leiningen -y
 sudo apt install fd-find -y
 sudo apt install markdown -y
+sudo apt install guile-3.0 -y
