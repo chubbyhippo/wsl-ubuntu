@@ -15,7 +15,7 @@ wsl --set-default ubuntu
 wsl --unregister ubuntu
 ```
 ```powershell
-wsl --uninstall ubuntu
+wsl --uninstall
 ```
 ```powershell
 wsl --list
