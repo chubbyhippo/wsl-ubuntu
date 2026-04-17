@@ -24,3 +24,7 @@ wsl --list
 ```sh
 sudo nano /etc/apt/sources.list.d/ubuntu.sources
 ```
+## check ubuntu version
+```sh
+lsb_release -a
+```
