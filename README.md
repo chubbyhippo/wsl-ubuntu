@@ -28,3 +28,7 @@ sudo nano /etc/apt/sources.list.d/ubuntu.sources
 ```sh
 lsb_release -a
 ```
+## docker install
+```sh
+curl https://raw.githubusercontent.com/chubbyhippo/wsl-ubuntu/refs/heads/main/docker.sh | /usr/bin/env sh
+```
