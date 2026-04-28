@@ -32,3 +32,7 @@ lsb_release -a
 ```sh
 curl https://raw.githubusercontent.com/chubbyhippo/wsl-ubuntu/refs/heads/main/docker.sh | /usr/bin/env sh
 ```
+## mise install
+```sh
+curl https://raw.githubusercontent.com/chubbyhippo/wsl-ubuntu/refs/heads/main/mise.sh | /usr/bin/env sh
+```
