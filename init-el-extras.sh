@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 
 # Language servers and debuggers for init.el's extras
-# (clojure, cpp, elixir, erlang, go, java, python, rust, scheme, typescript, zig).
+# (clojure, cobol, cpp, elixir, erlang, go, haskell, html, java, python, rust,
+# scheme, typescript, zig).
 # Runtimes come from mise's global tool set (mise.toml, installed by
 # init.sh: go, node, erlang, elixir, zig + zls) and rustup (cargo);
 # tree-sitter grammars are installed inside Emacs
@@ -90,5 +91,30 @@ rustup component add rust-analyzer
 npm install -g typescript typescript-language-server
 mkdir -p "$HOME/.config/emacs/debug-adapters"
 [ -d "$HOME/.config/emacs/debug-adapters/js-debug" ] || curl -fsSL "$(curl -fsSL https://api.github.com/repos/microsoft/vscode-js-debug/releases/latest | grep -o 'https://[^"]*js-debug-dap[^"]*\.tar\.gz' | head -n 1)" | tar -xz -C "$HOME/.config/emacs/debug-adapters"
+
+# html/css: both language servers ship in one npm package — eglot's built-in
+# table already maps html-mode to vscode-html-language-server and css-mode /
+# css-ts-mode to vscode-css-language-server, so nothing else is wired.
+npm install -g vscode-langservers-extracted
+
+# cobol: GnuCOBOL's cobc/cobcrun. The `gnucobol' metapackage pulls gnucobol3
+# 3.2, which is also the minimum the SuperBOL LSP server wants.
+sudo apt install -y gnucobol
+
+# cobol LSP: superbol-free is NOT installed here, because it is packaged
+# nowhere — not on opam, the 1.0.0 release ships no binaries, and the VSIX
+# bundles the server as JavaScript rather than a native binary. Building it
+# means an OCaml 4.14.2 opam switch, which does not belong in an unattended
+# bootstrap; the recipe is in this repo's README. Nothing breaks until you run
+# it: extras/cobol.el checks `executable-find' at buffer-open time, so COBOL
+# editing stays quiet and compiler-only, then picks up the server with no edit.
+
+# haskell: also not automated. haskell-language-server is not in apt, and the
+# documented installer pulls an entire GHC toolchain, so run it yourself when
+# you want the layer:
+#   curl -fsSL https://get-ghcup.haskell.org | \
+#     BOOTSTRAP_HASKELL_NONINTERACTIVE=1 BOOTSTRAP_HASKELL_INSTALL_HLS=1 sh
+# extras/haskell.el then needs nothing more — eglot's built-in table already
+# maps haskell-mode to `haskell-language-server-wrapper --lsp'.
 
 # zig: compiler + zls come from mise.toml via init.sh

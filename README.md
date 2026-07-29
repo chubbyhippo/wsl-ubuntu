@@ -60,6 +60,24 @@ mise install --yes
 ```sh
 curl -fsSL https://raw.githubusercontent.com/chubbyhippo/wsl-ubuntu-settings/refs/heads/main/init-el-extras.sh | /usr/bin/env sh
 ```
+## cobol lsp build (superbol-free — optional, not in init-el-extras.sh)
+Packaged nowhere: no opam package, no release binaries, and the VSIX ships the
+server as JavaScript — so the native binary is built from source. Until it is on
+PATH `extras/cobol.el` withholds eglot, so COBOL stays compiler-only and quiet.
+```sh
+sudo apt install -y opam && opam init --no-setup --disable-sandboxing -y
+```
+```sh
+git clone --recurse-submodules https://github.com/OCamlPro/superbol-studio-oss ~/.local/share/superbol-studio-oss
+```
+```sh
+cd ~/.local/share/superbol-studio-oss && make build-deps && make build
+```
+`make build` leaves the binary at the repo root (`scripts/copy-bin.sh` copies it
+out of `_build/`), so link it onto PATH:
+```sh
+ln -sf ~/.local/share/superbol-studio-oss/superbol-free ~/.local/bin/superbol-free
+```
 ## ai clis install (claude code, codex, gemini)
 ```sh
 curl -fsSL https://raw.githubusercontent.com/chubbyhippo/wsl-ubuntu-settings/refs/heads/main/ai.sh | /usr/bin/env sh
