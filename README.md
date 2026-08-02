@@ -25,8 +25,11 @@ wsl --list
 lsb_release -a
 ```
 ## wsl settings install
-`wsl.conf` → `/etc/wsl.conf`, `.wslconfig` → `%UserProfile%\.wslconfig` —
-created only if absent; apply with `wsl --shutdown`.
+| File | Lands at | Note |
+|---|---|---|
+| `wsl.conf` | `/etc/wsl.conf` | created only if absent |
+| `.wslconfig` | `%UserProfile%\.wslconfig` | created only if absent |
+| apply with | `wsl --shutdown` | |
 ```sh
 curl -fsSL https://raw.githubusercontent.com/chubbyhippo/wsl-ubuntu-settings/refs/heads/main/wsl.sh | /usr/bin/env sh
 ```
@@ -61,9 +64,11 @@ mise install --yes
 curl -fsSL https://raw.githubusercontent.com/chubbyhippo/wsl-ubuntu-settings/refs/heads/main/init-el-extras.sh | /usr/bin/env sh
 ```
 ## cobol lsp build (superbol-free — optional, not in init-el-extras.sh)
-Packaged nowhere: no opam package, no release binaries, and the VSIX ships the
-server as JavaScript — so the native binary is built from source. Until it is on
-PATH `extras/cobol.el` withholds eglot, so COBOL stays compiler-only and quiet.
+| Item | Value |
+|---|---|
+| Packaging | none — no opam package, no release binaries, and the VSIX ships the server as JavaScript |
+| So | build the native binary from source |
+| Until it is on PATH | `extras/cobol.el` withholds eglot; COBOL stays compiler-only |
 ```sh
 sudo apt install -y opam && opam init --no-setup --disable-sandboxing -y
 ```
@@ -73,8 +78,7 @@ git clone --recurse-submodules https://github.com/OCamlPro/superbol-studio-oss ~
 ```sh
 cd ~/.local/share/superbol-studio-oss && make build-deps && make build
 ```
-`make build` leaves the binary at the repo root (`scripts/copy-bin.sh` copies it
-out of `_build/`), so link it onto PATH:
+`make build` leaves the binary at the repo root; link it onto PATH:
 ```sh
 ln -sf ~/.local/share/superbol-studio-oss/superbol-free ~/.local/bin/superbol-free
 ```
