@@ -4,7 +4,6 @@ sudo apt install -y \
     build-essential \
     cmake \
     curl \
-    fd-find \
     file \
     git \
     guile-3.0 \
