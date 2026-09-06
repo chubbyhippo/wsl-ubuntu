@@ -10,7 +10,6 @@ sudo apt install -y \
     guile-3.0 \
     markdown \
     procps \
-    ripgrep \
     rlwrap \
     tmux \
     unzip
