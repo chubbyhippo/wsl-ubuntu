@@ -6,6 +6,7 @@
 # correct/only pin — setting "lts" there would fail to resolve.
 [tools]
 java = "lts"
+clojure = "latest"
 maven = "latest"
 gradle = "latest"
 go = "latest"
