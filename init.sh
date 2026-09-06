@@ -26,8 +26,6 @@ sudo apt install -y autoconf m4 libncurses-dev libssl-dev
 command -v starship >/dev/null 2>&1 || curl -fsSL https://starship.rs/install.sh | sh
 # bashrc — append once, keyed on the gac alias ('>>' creates the file if missing)
 grep -qsF 'alias gac=' ~/.bashrc || curl -fsSL https://raw.githubusercontent.com/chubbyhippo/wsl-ubuntu-settings/refs/heads/main/.bashrc >> ~/.bashrc
-# trivy
-command -v trivy >/dev/null 2>&1 || curl -fsSL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sudo sh -s -- -b /usr/local/bin v0.70.0
 # brew
 curl -fsSL https://raw.githubusercontent.com/chubbyhippo/wsl-ubuntu-settings/refs/heads/main/brew.sh | /usr/bin/env sh
 # init.el extras (language servers + debuggers)
