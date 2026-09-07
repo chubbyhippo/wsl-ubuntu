@@ -5,6 +5,7 @@
 # (java, node); the rest have no LTS release concept, so "latest" is the
 # correct/only pin — setting "lts" there would fail to resolve.
 [tools]
+chezscheme = "latest"
 java = "lts"
 clojure = "latest"
 maven = "latest"
