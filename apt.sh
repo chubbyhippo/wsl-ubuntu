@@ -7,6 +7,7 @@ sudo apt install -y \
     file \
     git \
     guile-3.0 \
+    libx11-dev \
     markdown \
     procps \
     rlwrap \
